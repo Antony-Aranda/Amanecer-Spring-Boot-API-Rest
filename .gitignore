@@ -1,0 +1,72 @@
+# -------------------------------
+# HELP & documentación
+# -------------------------------
+HELP.md
+
+# -------------------------------
+# Directorios de build y artefactos
+# -------------------------------
+/target/
+/build/
+!**/src/main/**/target/
+/**/dependency-reduced-pom.xml
+
+# -------------------------------
+# Maven Wrapper
+# -------------------------------
+/.mvn/
+/mvnw
+/mvnw.cmd
+!.mvn/wrapper/maven-wrapper.jar
+
+# -------------------------------
+# IDEs / editores
+# -------------------------------
+## STS (Spring Tool Suite)
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans/
+.sts4-cache/
+
+## IntelliJ IDEA
+/.idea/
+/*.iws
+/*.iml
+/*.ipr
+
+## NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+/build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+## Visual Studio Code
+/.vscode/
+
+# -------------------------------
+# Sistema / temporales
+# -------------------------------
+*.log
+*.tmp
+*.bak
+*.swp
+.DS_Store
+Thumbs.db
+
+# -------------------------------
+# Configuración local / secretos
+# -------------------------------
+/application-*.properties
+/.env
+
+# -------------------------------
+# Otros ficheros generados
+# -------------------------------
+dependency-reduced-pom.xml

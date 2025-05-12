@@ -9,7 +9,7 @@ import java.time.LocalTime;
 @Getter
 @Setter
 @Entity
-@Table(name = "bloque_disponible")
+@Table(name = "Bloque_disponible")
 public class BloqueDisponible {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

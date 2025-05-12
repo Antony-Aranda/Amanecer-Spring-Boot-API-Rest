@@ -7,7 +7,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "categoria_terapia")
+@Table(name = "Categoria_terapia")
 public class CategoriaTerapia {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

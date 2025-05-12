@@ -1,21 +1,21 @@
-# Dockerfile
-FROM eclipse-temurin:17-jdk-alpine
-
-# Directorio de trabajo
+# ---------- STAGE 1: Build con Maven + JDK 21 -----------
+FROM maven:3.9.4-eclipse-temurin-21 AS build
 WORKDIR /app
 
-# Copia pom y descarga dependencias (caché)
+# 1) Copia pom.xml y cachea dependencias
 COPY pom.xml .
-RUN mvn dependency:go-offline -B
+RUN mvn dependency:go-offline -B               # descarga todas las dependencias
 
-# Copia el resto del proyecto
+# 2) Copia código y empaqueta JAR sin tests
 COPY src ./src
+RUN mvn clean package -DskipTests             # compila con --release 21
 
-# Compila y empaqueta
-RUN mvn clean package -DskipTests
+# ---------- STAGE 2: Runtime con Amazon Corretto 21 Alpine -----------
+FROM amazoncorretto:21-alpine-jdk AS runtime
+WORKDIR /app
 
-# Exponer el puerto que usa Spring Boot por defecto
+# Copia el JAR empaquetado desde la etapa de build
+COPY --from=build /app/target/*.jar app.jar
+
 EXPOSE 8080
-
-# Comando para arrancar la aplicación
-ENTRYPOINT ["java","-jar","target/blog-api-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java","-jar","app.jar"]

@@ -22,6 +22,7 @@ import java.util.List;
 @Tag(name = "Terapeutas", description = "Gestión de terapeutas")
 @RestController
 @RequestMapping("/api/terapeutas")
+@CrossOrigin(origins = "*")
 public class TerapeutaController {
 
     private final TerapeutaServicio service;

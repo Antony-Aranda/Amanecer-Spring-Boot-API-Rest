@@ -23,6 +23,7 @@ import java.util.List;
 @Tag(name = "Duracion", description = "Gestión de Rango de duracion")
 @RestController
 @RequestMapping("/api/rangos-duracion")
+@CrossOrigin(origins = "*")
 public class RangoDuracionController {
 
     private final RangoDuracionServicio service;

@@ -22,6 +22,7 @@ import java.util.List;
 @Tag(name = "Detalles", description = "Gestión de detalles")
 @RestController
 @RequestMapping("/api/citas/{citaId}/detalles")
+@CrossOrigin(origins = "*")
 public class DetalleCitaController {
     private final DetalleCitaService service;
 

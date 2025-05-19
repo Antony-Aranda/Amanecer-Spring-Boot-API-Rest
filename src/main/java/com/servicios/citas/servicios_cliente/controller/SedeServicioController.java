@@ -24,6 +24,7 @@ import java.util.List;
 @Tag(name = "SedeServicios", description = "Gestión de sedeServicios")
 @RestController
 @RequestMapping("/api/sedes-servicios")
+@CrossOrigin(origins = "*")
 public class SedeServicioController {
     private final SedeServicioServicio service;
 

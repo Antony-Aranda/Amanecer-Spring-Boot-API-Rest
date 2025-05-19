@@ -24,7 +24,7 @@ import java.util.List;
 @Tag(name = "Categoria", description = "Gestión de categorias")
 @RestController
 @RequestMapping("/api/categorias-terapia")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.PATCH, RequestMethod.DELETE})
 public class CategoriaTerapiaController {
     private final CategoriaTerapiaServicio service;
 

@@ -21,7 +21,7 @@ import java.util.Map;
 @Tag(name = "TerapeutaSedeServicios", description = "Gestión de asignaciones")  // Agrupa y describe el controlador :contentReference[oaicite:2]{index=2}
 @RestController
 @RequestMapping("/api/sedes-servicios/{ssId}/terapeutas")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.PATCH, RequestMethod.DELETE})
 public class TerapeutaSedeServicioController {
     private final TerapeutaSedeServicioServicio service;
 

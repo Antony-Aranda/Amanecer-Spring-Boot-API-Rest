@@ -24,7 +24,7 @@ import java.util.List;
 @Tag(name = "Bloques", description = "Gestión de bloques")
 @RestController
 @RequestMapping("/api/bloques-disponibles")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.PATCH, RequestMethod.DELETE})
 public class BloqueDisponibleController {
     private final BloqueDisponibleServicio service;
 

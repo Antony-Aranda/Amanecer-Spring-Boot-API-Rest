@@ -20,7 +20,7 @@ import java.util.List;
 @Tag(name = "Usuarios", description = "Gestión de usuarios")  // Agrupa y describe el controlador :contentReference[oaicite:2]{index=2}
 @RestController
 @RequestMapping("/api/usuarios")
-@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*", methods = {RequestMethod.GET, RequestMethod.POST, RequestMethod.PUT, RequestMethod.PATCH, RequestMethod.DELETE})
 public class UsuarioController {
 
     private final UsuarioService service;
